@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="LibraryAPISuite">
+    <test name="AddAndDeleteBookTest">
+        <classes>
+            <class name="Automation.RestAssuredPractice.LibraryAPI"/>
+        </classes>
+    </test>
+</suite>

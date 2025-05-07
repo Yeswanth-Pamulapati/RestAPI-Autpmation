@@ -1,0 +1,17 @@
+In REST Assured (a Java library for testing REST APIs), the keywords given, when, 
+and then are part of a fluent interface that makes the code readable and structured like natural language. 
+Here's a breakdown of each:
+1)given(): sets up the preconditions for the API request.
+	You define things like:
+	
+	Base URI / path
+
+	Headers
+
+	Parameters
+
+	Authentication
+
+	Request body (if needed)
+2)when(): This defines the action, i.e., the actual HTTP method call (GET, POST, PUT, DELETE, etc.)	
+3)then(): This is used to verify the response. You assert status codes, response bodies, headers, etc.
