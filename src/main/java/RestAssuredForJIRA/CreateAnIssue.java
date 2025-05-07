@@ -1,6 +1,7 @@
 package RestAssuredForJIRA;
 
 import Files.Payload;
+import Files.Utils;
 import groovy.json.JsonParser;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -13,8 +14,7 @@ import static io.restassured.RestAssured.*;
 public class CreateAnIssue {
     @Test
     public void createABug(){
-        baseURI="https://pamulapatiy.atlassian.net";
-
+        baseURI=Utils.baseURL();
         String summary="Going back forth between H&W and Loan details page causing UI issues-Automation.";
         String description = "Going back forth between H&W and Loan details page causing UI issues causing breaking of the page.";
         //Create a new bug
@@ -23,7 +23,8 @@ public class CreateAnIssue {
                 .when().post("/rest/api/3/issue")
                 .then().log().all().statusCode(201).extract().asString();
         JsonPath js = new JsonPath(createBugResponse);
-        String issueID = js.getString("id");
-        System.out.println(issueID);
+        Utils.BugID = js.getString("id");
+        System.out.println(Utils.BugID);
+
     }
 }
